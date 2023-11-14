@@ -7,20 +7,25 @@
 </head>
 <body>
 <main>
-    
+    <button onclick="calculate()">buy: €60</button>
+    <p id="Cal"></p>
 </main>
 <script>
 
-var budget = prompt('Voer uw budget in (alleen getal):');
+
 var product = 60;
 
-function calculate()
-if (budget >= product) {
-    document.getElementById("Cal").style.color = "green" ;
-    document.getElementById("Cal").innerHTML = "U heeft genoeg geld!" ;
-} else {
-    document.getElementById("Cal").style.color = "red" ;
-    document.write("Cal")"Helaas, te weinig geld." ;
+function calculate() {
+
+    var budget = prompt('Voer uw budget in (alleen getal):');
+
+    if (budget >= product) {
+        document.getElementById("Cal").style.color = "green";
+        document.getElementById("Cal").innerHTML = "U heeft genoeg geld!";
+    } else {
+        document.getElementById("Cal").style.color = "red";
+        document.getElementById("Cal").innerHTML = "Helaas, te weinig geld.";
+    }
 }
 
 </script>
