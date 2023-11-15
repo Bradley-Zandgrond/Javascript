@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+</head>
+<body>
+<main>
+
+    <button onclick="handleClick()">Click me</button>
+    <p id="counter">0</p>
+
+</main>
+<script>
+
+var number = 0;
+
+function handleClick() {
+    try {
+        if (number == 10) {
+            number = 0;
+        } else {
+            number = (number + 1);
+        }
+        
+        document.getElementById("counter").innerHTML = number;
+        console.log(number);
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+}
+</script>
+
+</body>
+</html>

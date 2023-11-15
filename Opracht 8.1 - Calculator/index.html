@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+<main>     
+
+<p id="answer">Het antwoord is: ____</p>
+
+    <input type="number" id="getal1" placeholder="getal 1">
+    <input type="number" id="getal2" placeholder="getal 2"><br><br>
+
+<button onclick="multiply()">x</button>
+<button onclick="minus()">-</button>
+<button onclick="add()">+</button>
+<button onclick="devide()">/</button>
+<button id="reset" onclick="reset()">Reset</button>
+
+</main>
+
+<script>
+
+
+function multiply() {
+
+    let getal1 = parseFloat(document.getElementById("getal1").value);
+    let getal2 = parseFloat(document.getElementById("getal2").value);
+    document.getElementById("answer").innerHTML = 'Het antwoord is: ' + (getal1 * getal2);
+
+    // Clear the input fields
+    document.getElementById("getal1").value = '';
+    document.getElementById("getal2").value = '';
+}
+
+function minus() {
+    let getal1 = parseFloat(document.getElementById("getal1").value);
+    let getal2 = parseFloat(document.getElementById("getal2").value);
+    document.getElementById("answer").innerHTML = 'Het antwoord is: ' + (getal1 - getal2);
+
+    // Clear the input fields
+    document.getElementById("getal1").value = '';
+    document.getElementById("getal2").value = '';
+}
+
+function add() {
+    let getal1 = parseFloat(document.getElementById("getal1").value);
+    let getal2 = parseFloat(document.getElementById("getal2").value);
+    document.getElementById("answer").innerHTML = 'Het antwoord is: ' + (getal1 + getal2);
+
+    // Clear the input fields
+    document.getElementById("getal1").value = '';
+    document.getElementById("getal2").value = '';
+}
+
+function devide() {
+    let getal1 = parseFloat(document.getElementById("getal1").value);
+    let getal2 = parseFloat(document.getElementById("getal2").value);
+    document.getElementById("answer").innerHTML = 'Het antwoord is: ' + (getal1 / getal2);
+
+    // Clear the input fields
+    document.getElementById("getal1").value = '';
+    document.getElementById("getal2").value = '';
+}
+
+function reset() {
+
+    // Clear the input fields
+    document.getElementById("getal1").value = '';
+    document.getElementById("getal2").value = '';
+
+    //Clear the answer
+    document.getElementById("answer").innerHTML = 'Het antwoord is: ____';
+}
+
+</script>
+
+<style>
+#getal2
+{
+    margin-left: 0.5rem;
+}
+#reset
+{
+    margin-left: 12.5rem;
+}
+</style>
+</body>
+</html>
