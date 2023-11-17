@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<main>
+
+    <div class="center">
+        <div class="monkey" id="opened">🙉</div>
+        <div class="monkey" id="closed">🙈</div>
+    </div>
+
+</main>
+
+<script>
+
+var openEyes = document.getElementById("opened");
+var closedEyes = document.getElementById("closed");
+
+openEyes.onclick = function() {
+    openEyes.style.display = "none";
+    closedEyes.style.display = "block";
+
+    closedEyes.onclick = function() {
+    openEyes.style.display = "block";
+    closedEyes.style.display = "none";
+}
+
+}
+
+</script>
+
+<style>
+
+.center
+{
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.monkey
+{
+    font-size: 1000%;
+}
+#closed
+{
+    display: none;
+}
+
+</style>
+
+</body>
+</html>
