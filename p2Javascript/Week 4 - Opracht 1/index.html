@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeat X 10</title>
+</head>
+<body>
+    <main>
+        <p id="som"></p>
+    </main>
+    <script>
+
+    let repeatedText = '';
+
+    for (let number = 1; number <= 10; number++) {
+        let currentResult = number * 10;
+        repeatedText += number + ' x 10 = ' + currentResult + '<br><br>';
+    }
+
+    document.getElementById('som').innerHTML = repeatedText;
+
+    </script>
+</body>
+</html>

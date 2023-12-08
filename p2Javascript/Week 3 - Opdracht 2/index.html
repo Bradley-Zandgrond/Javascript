@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-loop</title>
+</head>
+<body>
+    <main>
+        <p id="text"></p>
+    </main>
+    <script>
+        let repeatText = 'Als vliegen achter vliegen vliegen vliegen vliegen vliegensvlug<br>';
+        let repeatedText = '';
+
+        for (let number = 0; number < 100; number++) {
+            repeatedText += repeatText + ' ';
+        }
+
+        document.getElementById('text').innerHTML = repeatedText;
+    </script>
+</body>
+</html>
