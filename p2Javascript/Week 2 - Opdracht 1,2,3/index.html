@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Div Animatie</title>
+</head>
+<body>
+
+<div id="bewegendDiv" onclick="changeColor()"></div>
+    
+<script>
+    var bewegendDiv = document.getElementById("bewegendDiv");
+    var positie = 0;
+    var richting = 1; // 1 voor rechts, -1 voor links
+    var intervalID;
+
+    function moveDiv() {
+        positie += 5 * richting; // Aanpassing van de stapgrootte
+        bewegendDiv.style.left = positie + "px";
+
+        if (positie >= window.innerWidth - bewegendDiv.offsetWidth) {
+            // Bereikt de rechterkant van het scherm
+            richting = -1;
+            changeColor(); // Voeg kleurverandering toe bij richtingsverandering
+        } else if (positie <= 0) {
+            // Bereikt de linkerkant van het scherm
+            richting = 1;
+            changeColor(); // Voeg kleurverandering toe bij richtingsverandering
+        }
+    }
+
+    intervalID = setInterval(moveDiv, 16);
+
+    function changeColor() {
+        var randomColor = getRandomColor();
+        bewegendDiv.style.backgroundColor = randomColor;
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+</body>
+</html>

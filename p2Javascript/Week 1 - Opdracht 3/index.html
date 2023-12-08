@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value</title>
+</head>
+<body>
+    <form action="#" id="myForm">
+        <label for="fname">Name</label>
+        <input id="fname" type="text" name="fname" placeholder="first name">
+        <label for="lname">Last Name</label>
+        <input id="lname" type="text" name="lname" placeholder="last name">
+        <button id="submitBtn" type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <script>
+        function submitForm() {
+            var fnameValue = document.getElementById("fname").value;
+            var lnameValue = document.getElementById("lname").value;
+
+            // Do something with the values (for now, let's just log them)
+            console.log("First Name:", fnameValue);
+            console.log("Last Name:", lnameValue);
+        }
+    </script>
+</body>
+</html>
