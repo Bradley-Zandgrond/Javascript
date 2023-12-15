@@ -6,9 +6,36 @@ document.body.appendChild(canvas);
 
 let x = 50; // startpositie X
 let y = 50; // startpositie Y
-let dx = 2; // startsnelheid X
-let dy = 2; // startsnelheid Y
+let dx = 0; // startsnelheid X
+let dy = 0; // startsnelheid Y
 let radius = 20; // radius van de circle
+
+let x2 = 100;
+let y2 = 150;
+let speed = 4;
+let radius2 = 20;
+
+document.addEventListener('keydown', function(event){
+    if (event.key === 'ArrowLeft') {
+        x2 -= speed; 
+        if (x2 < radius2) {
+            x2 = radius2;
+        }  
+    } else if (event.key === 'ArrowRight') {
+        x2 += speed;
+        if (x2 > canvas.width - radius2) {
+            x2 = canvas.width - radius2;
+        }
+    }
+});
+
+// starten van bewegen bal 1
+function startMovement(){
+    dx = 2;
+    dy = 2;
+}
+
+document.getElementById('startButton').addEventListener('click', startMovement)
 
 // functie om een cirle te tekenen
 function drawCircle() {
@@ -19,12 +46,24 @@ function drawCircle() {
     ctx.closePath();
 }
 
+// functie om een cirle te tekenen
+function drawCircle2() {
+    ctx.beginPath();
+    ctx.arc(x2, y2, radius2, 0, Math.PI * 2, true);
+    ctx.fillStyle = 'red';
+    ctx.fill();
+    ctx.closePath();
+}
+
 // uitrekenen van rand, tekenen van canvas
 function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#FEFEFE";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
     drawCircle();
+    drawCircle2();
+
     // Verander de positie van de cirkel
     x += dx; // = x=x+dx
     y += dy; // = y=y+dy
